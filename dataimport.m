@@ -76,8 +76,8 @@ EEG = eeg_checkset(EEG);
 locutoff = 1; hicutoff = 40;
 
 fprintf('Filtering between %d-%dHz.\n',locutoff,hicutoff);
-EEG = pop_eegfilt(EEG,locutoff,0);
-EEG = pop_eegfilt(EEG,0,hicutoff);
+EEG = pop_eegfiltnew(EEG,locutoff,0);
+EEG = pop_eegfiltnew(EEG,0,hicutoff);
 
 EEG = pop_epoch(EEG,{'RIGHTHAND','TOES'},[-1.5 4]);
 EEG = pop_rmbase(EEG, [-500 0]);

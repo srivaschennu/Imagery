@@ -40,8 +40,8 @@ timewin = [0.5 1.5];
 freqwin = [7 30];
 
 %% Filter
-EEG = pop_eegfilt(EEG,freqwin(1),0);
-EEG = pop_eegfilt(EEG,0,freqwin(2));
+EEG = pop_eegfiltnew(EEG,freqwin(1),0);
+EEG = pop_eegfiltnew(EEG,0,freqwin(2));
 EEG.data = reshape(EEG.data,EEG.nbchan,EEG.pnts,EEG.trials);
 
 % fullmodel = csp_calc(EEG,struct('patterns',4,'timewin',timewin));
